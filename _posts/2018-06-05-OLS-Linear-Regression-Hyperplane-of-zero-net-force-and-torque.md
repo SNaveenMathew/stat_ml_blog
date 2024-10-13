@@ -38,7 +38,7 @@ $$\sum_{\forall i} \bar{y}-y[i] = 0 \tag{Equation 1}$$
 
 ### Intuition
 
-<img src="../data/regressionfit.gif">
+<img src="../../../data/regressionfit.gif">
 
 Image source: [This post](https://eli.thegreenplace.net/2016/linear-regression/) on [Eli Bendersky's website](https://eli.thegreenplace.net/)
 
