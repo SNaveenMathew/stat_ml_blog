@@ -1,5 +1,1 @@
-Here you can say lots of fun things about your site.
-
-Maybe say a some things about yourself.
-
-Or maybe what you plan to blog about.
+Moved my blog from Medium.com. Ideas are my own, but are inspired by my teachers and by several giants in the fields of Statistics, Information Theory, Physics, Computing, etc.
