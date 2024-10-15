@@ -16,7 +16,7 @@ As insecure beings in a practically infinite universe, we humans have been victi
 
 ### A Trivial Example
 
-When we look at a coin, we start with the trivial assumption that the coin is unbiased (P(H) = P(T) = 0.5). This is our prior. When we toss the coin, we start observing a sequence of H/T outcomes. This is our data. As we observe the results of tossing the coin multiple times, we update our assumption on the coin (P(Unbiased | Data)). It is difficult for us to continue to believe that the coin is unbiased if we observe a streak of 10 consecutive heads (or 10 consecutive tails). However, this conclusion may be defeated if we observe 10 consecutive results of opposite type in the next 10 tosses. Getting a concrete estimate for P(H) looks like an endless process, as stated by the frequentist definition: P(H) = N(H)/N(Tosses), where N(Tosses) -> infinity.
+When we look at a coin, we start with the trivial assumption that the coin is unbiased (P(H) = P(T) = 0.5). This is our prior. When we toss the coin, we start observing a sequence of H/T outcomes. This is our data. As we observe the results of tossing the coin multiple times, we update our assumption on the coin (P(Unbiased \| Data)). It is difficult for us to continue to believe that the coin is unbiased if we observe a streak of 10 consecutive heads (or 10 consecutive tails). However, this conclusion may be defeated if we observe 10 consecutive results of opposite type in the next 10 tosses. Getting a concrete estimate for P(H) looks like an endless process, as stated by the frequentist definition: P(H) = N(H)/N(Tosses), where N(Tosses) -> infinity.
 
 ### Conclusion
 
