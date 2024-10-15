@@ -4,7 +4,7 @@
 
 "Frequentist vs Bayesian" reasoning/inference has been an important debate in the field of statistics. In this article we will discuss introductory concepts of Bayesian statistics - only in terms of philosphy; the math will be discussed in a future post.
 
-### Three focus areas of Bayesian statistics:
+### Three focus areas of Bayesian statistics
 
 1. Prior: As kids we were afraid of the darkness of night, even though did not observe that the nights were more threatening than the days. Why is that? It’s our instincts — we 'believe' this to be the truth without any evidence. This is equivalent to a prior. For a more concrete example, watch [this video](https://www.youtube.com/watch?v=1RA2Zy_IZfQ&t=915s) from 15:15 to 16:30.
 2. Data: As we grow up, we observe many people with similar attributes (economic status, demographics, etc.). We follow the news. Implicitly we are collecting data.

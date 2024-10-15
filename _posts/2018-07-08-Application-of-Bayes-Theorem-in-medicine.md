@@ -20,11 +20,11 @@ If a person has disease X, he/she is 99% likely to be detected as positive (corr
 
 ### Evaluation of Setting 1
 
-$$P(X | +) = P(+ | X) * P(X) / (P(+ | X) * P(X) + P(+ | no X) * P(no X)) = 0.99*0.005/(0.99*0.005 + 0.02*0.995) = 0.199$$
+$$P(X | +) = \frac{P(+ | X) * P(X)}{(P(+ | X) * P(X) + P(+ | no X) * P(no X))} = \frac{0.99*0.005}{(0.99*0.005 + 0.02*0.995)} = 0.199$$
 
 This is not good.
 
-$$P(no X | -) = P(- | no X) * P(no X) / (P(- | no X) * P(no X) + P(- | X) * P(X)) = 0.98*0.995/(0.98*0.995 + 0.01*0.005) = 0.9999$$
+$$P(no X | -) = \frac{P(- | no X) * P(no X)}{(P(- | no X) * P(no X) + P(- | X) * P(X))} = \frac{0.98*0.995}{(0.98*0.995 + 0.01*0.005)} = 0.9999$$
 
 This is good.
 
@@ -42,11 +42,11 @@ First look suggests that the test is going to be inferior as only 97% of the peo
 
 ### Evaluation of Setting 2
 
-$$P(X | +) = P(+ | X) * P(X) / (P(+ | X) * P(X) + P(- | no X) * P(no X)) = 0.97*0.5/(0.97*0.5 + 0.05*0.5) = 0.951$$
+$$P(X | +) = \frac{P(+ | X) * P(X)}{(P(+ | X) * P(X) + P(- | no X) * P(no X))} = \frac{0.97*0.5}{(0.97*0.5 + 0.05*0.5)} = 0.951$$
 
 This is not good.
 
-$$P(no X | -) = P(- | no X) * P(no X) / (P(- | no X) * P(no X) + P(- | X) * P(X)) = 0.95*0.5/(0.95*0.5 + 0.03*0.5) = 0.969$$
+$$P(no X | -) = \frac{P(- | no X) * P(no X)}{(P(- | no X) * P(no X) + P(- | X) * P(X))} = \frac{0.95*0.5}{(0.95*0.5 + 0.03*0.5)} = 0.969$$
 
 This is good, but not as good as setting 1.
 
