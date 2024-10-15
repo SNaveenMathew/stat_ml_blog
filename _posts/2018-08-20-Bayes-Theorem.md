@@ -8,25 +8,27 @@ This article is meant to setup the mathematical foundation of Bayesian statistic
 
 For discrete sets $A$ and $B$
 
-$$P(A\|B) = \frac{P(A \cap B)}{P(B)} \tag{1}$$
+$$P(A|B) = \frac{P(A \cap B)}{P(B)} \tag{1}$$
 
-For binary A this simplifies to $P(A\|B) = P(A \cap B)/(P(B\|A)*P(A) + P(B\|A)*P(A))$
+For binary A this simplifies to
 
-$$P(B\|A) = \frac{P(A \cap B)}{P(A)} \implies P(A \cap B) = P(B\|A) * P(A) \tag{2}$$
+$$P(A|B) = P(A \cap B)/(P(B|A)*P(A) + P(B|A)*P(A))$$
+
+$$P(B|A) = \frac{P(A \cap B)}{P(A)} \implies P(A \cap B) = P(B|A) * P(A) \tag{2}$$
 
 Substituting $2$ in $1$ we get
 
-$$P(A\|B) = \frac{P(B\|A) * P(A)}{P(B\|A) * P(A) + P(B\|A') * P(A')}$$
+$$P(A|B) = \frac{P(B|A) * P(A)}{P(B|A) * P(A) + P(B|A') * P(A')}$$
 
 Generalizing this to categorial $A$ with more than two levels:
 
-$$P(A_j\|B) = \frac{P(B\|A_j) * P(A_j)}{\sum_{\forall i}P(B\|A_i) * P(A_i)}$$
+$$P(A_j|B) = \frac{P(B|A_j) * P(A_j)}{\sum_{\forall i}P(B|A_i) * P(A_i)}$$
 
 ### Continuous $A$
 
 Continuous form of Bayes theorem in the form of densities is given by:
 
-$$P(A\|B) = \frac{P(B\|a) * f(a)}{\int P(B\|a) * f(a) da}$$
+$$P(A|B) = \frac{P(B|a) * f(a)}{\int P(B|a) * f(a) da}$$
 
 ### General Note
 
@@ -46,11 +48,11 @@ The [Wikipedia page](https://en.wikipedia.org/wiki/Posterior_predictive_distribu
 
 ##### Unobserved Parameter
 
-$$\pi(\theta\|y) = \frac{f_{Y\|\theta}(y\|\theta)\pi(\theta)}{\int_{\Theta}f_{Y\|\theta}(y\|\theta)\pi(\theta)} \propto \frac{f_{Y\|\theta}(y\|\theta)\pi(\theta)}$$
+$$\pi(\theta|y) = \frac{f_{Y|\theta}(y|\theta) \pi(\theta)}{\int_{\Theta}f_{Y|\theta}(y|\theta) \pi(\theta)} \propto f_{Y|\theta}(y|\theta)\pi(\theta)$$
 
 ##### Unobserved Random Variable
 
-$$f(y_2\|\theta,y_1) = \int f(y_2\|\theta,y_1)f(\theta\|y_1)d\theta$$
+$$f(y_2|\theta,y_1) = \int f(y_2|\theta,y_1)f(\theta|y_1)d\theta$$
 
 If $y_2$ and $y_1$ are independent, this simplifies to $f(y_2\|\theta,y_1) = \int f(y_2\|\theta)f(\theta\|y_1)d\theta$
 
