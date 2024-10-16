@@ -44,7 +44,7 @@ $$Y=\beta_0^{(f)} + \beta_1^{(f)}X_1 + ... + \beta_p^{(f)}X_p + \epsilon^{(f)} \
 
 $$Y=\beta_0^{(r)} + \beta_1^{(r)}X_1 + ... + \beta_q^{(r)}X_q + \epsilon^{(r)} \tag{Model 2}$$
 
-$F$-test can be used to test the hypothesis $H_0: \beta_{q+1}=\beta_{q+2}=...=\beta{p}=0$ vs. $H_1: At\ least\ one\ of\ \beta_{q+1}, \beta_{q+2}, ..., \beta{p}\ is\ non-zero$.
+$F$-test can be used to test the hypothesis $H_0: \beta_{q+1}=\beta_{q+2}=...=\beta{p}=0$ vs. $H_1: At\ least\ one\ of\ \beta_{q+1}, \beta_{q+2}, ..., \beta{p}\ is\ non\ zero$.
 
 $$F=\frac{(RSS_{model\ 1}-RSS_{model\ 2})/(p-q)}{RSS_{model\ 2}/df_{model\ 2}}; F_{crit}=F_{1-\alpha,p-q,n-p-1}$$
 
