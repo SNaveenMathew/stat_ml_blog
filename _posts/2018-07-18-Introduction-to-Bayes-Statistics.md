@@ -1,4 +1,4 @@
-## Introduction to Bayesian Statistics
+## Introduction to Bayesian Statistics - Part 1
 
 ### Introduction
 
