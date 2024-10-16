@@ -8,7 +8,7 @@ My laptop configuration is decent: Ubuntu 18.04, 16 GB DDR4, Intel core i7–875
 
 ### Data (samples):
 
-**Without mentioning the type of data, here are few anonymized samples (dy's can be positive or negative):**
+*Without mentioning the type of data, here are few anonymized samples (dy's can be positive or negative):*
 
 <figure>
   <img src="../../../data/example1.jpg">
@@ -25,13 +25,13 @@ My laptop configuration is decent: Ubuntu 18.04, 16 GB DDR4, Intel core i7–875
   <figcaption>Example 3</figcaption>
 </figure>
 
-**Note: There can be several consecutive rows that look identical.**
+*Note: There can be several consecutive rows that look identical.*
 
 ### Desired outputs for the examples
 
-**Question:** In example 3 how do we know whether y0 is a new value or it is y1+dy1
+*Question:* In example 3 how do we know whether y0 is a new value or it is y1+dy1
 
-**Answer:** Other columns (not shown above) in the data set help in identifying the difference.
+*Answer:* Other columns (not shown above) in the data set help in identifying the difference.
 
 <figure>
   <img src="../../../data/desired1.jpg">
@@ -48,7 +48,7 @@ My laptop configuration is decent: Ubuntu 18.04, 16 GB DDR4, Intel core i7–875
   <figcaption>Desired output:Example 3</figcaption>
 </figure>
 
-**Note: 0 does not appear in diff, but this is not a difference maker. Hence it is ignored in the solutions.**
+*Note: 0 does not appear in diff, but this is not a difference maker. Hence it is ignored in the solutions.*
 
 #### Properties
 
@@ -60,7 +60,7 @@ My laptop configuration is decent: Ubuntu 18.04, 16 GB DDR4, Intel core i7–875
 
 ### Solutions (processing 1 day)
 
-**Note: Codes are illustrative. They are incomplete!**
+*Note: Codes are illustrative. They are incomplete!*
 
 #### Brute force
 
@@ -100,7 +100,7 @@ Idea: Since both id's are sorted (assumed as descending order in the code below)
 
 Let us iterate through 2 examples:
 
-**Example 1:**
+*Example 1:*
 
 <figure>
   <img src="../../../data/example1.jpg">
@@ -111,7 +111,7 @@ Iteration 1 (ignore the indexing as Python starts with 0, but column indices sta
 
 Iteration 2: i=1 and while loop exits at j=1. Id's match, but diff=0 — therefore no updates. We're done!
 
-**Example 2:**
+*Example 2:*
 
 <figure>
   <img src="../../../data/example2.jpg">
