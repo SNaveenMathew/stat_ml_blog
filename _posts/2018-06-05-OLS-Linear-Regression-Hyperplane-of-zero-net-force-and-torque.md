@@ -1,4 +1,4 @@
-## OLS Linear Regression: Hyperplane of zero net force and torque
+## OLS Linear Regression: Hyperplane of Zero Net Force and Torque
 
 ### Introduction
 
