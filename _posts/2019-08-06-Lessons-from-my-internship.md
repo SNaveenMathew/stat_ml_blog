@@ -1,4 +1,4 @@
-## Lessons from my internship (and immediate aftermath)
+## Lessons from my Internship (and Immediate Aftermath)
 
 ### Introduction
 
