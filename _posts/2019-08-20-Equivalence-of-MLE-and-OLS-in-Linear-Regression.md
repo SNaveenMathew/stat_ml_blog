@@ -2,7 +2,7 @@
 
 ### Introduction
 
-A linear regression model can be described using $Y = \alpha + \betahat X + \epsilon$. This simplifies to the following form on the observed data: $y=\alpha + \beta + e \tag{Equation 1}$. After obtaining the maximum likelihood estimate for the coefficients using the sample, this equation simplifies to $\hat{y} = \hat\alpha + \hat\beta x$. The objective of this (short) article is to use the assumptions to establish the equivalence of OLS and MLE solutions for linear regression.
+A linear regression model can be described using $Y = \alpha + \beta X + \epsilon$. This simplifies to the following form on the observed data: $y=\alpha + \beta + e \tag{Equation 1}$. After obtaining the maximum likelihood estimate for the coefficients using the sample, this equation simplifies to $\hat{y} = \hat\alpha + \hat\beta x$. The objective of this (short) article is to use the assumptions to establish the equivalence of OLS and MLE solutions for linear regression.
 
 ### Important Model Assumptions
 
@@ -13,9 +13,9 @@ A linear regression model can be described using $Y = \alpha + \betahat X + \eps
 
 ### Full Likelihood
 
-For an observation e from a Gaussian distribution with 0 mean and constant variance, the likelihood is given by $L(e|\alpha, \beta) = \frac{exp(-\frac{e^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}$. Given the whole data set of n observations, assuming the residues are realizations of the iid (independent and identically distributed) Gaussian error, the likelihood can be written as:
+For an observation e from a Gaussian distribution with 0 mean and constant variance, the likelihood is given by $L(e\|\alpha, \beta) = \frac{exp(-\frac{e^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}$. Given the whole data set of n observations, assuming the residues are realizations of the iid (independent and identically distributed) Gaussian error, the likelihood can be written as:
 
-$$L(\vec{e}|\alpha,\beta)=\prod_{i=1}^{n}\frac{exp(\frac{e_i^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}=\frac{exp(-\frac{\sum_{i=1}^{n}e_i^2}{2\sigma^2})}{(\sqrt{2\pi\sigma^2})^n}$$
+$$L(\vec{e}|\alpha,\beta)=\prod_{i=1}^{n}\frac{exp(\frac{-e_i^2}{2\sigma^2})}{\sqrt{2\pi\sigma^2}}=\frac{exp(-\frac{\sum_{i=1}^{n}e_i^2}{2\sigma^2})}{(\sqrt{2\pi\sigma^2})^n}$$
 
 Since log is a monotonous transformation, the maximum likelihood estimate does not change on log transformation:
 
@@ -23,7 +23,7 @@ $$l(\vec{e}|\alpha,\beta)=log(L(\vec{e}|\alpha,\beta))=-\frac{\sum_{i=1}^{n}e_i^
 
 Substituting the maximum likelihood estimate:
 
-$$\hat\alpha, \hat\beta = argmax_{\alpha,\beta} l(\vec{e}|\alpbigha,\beta) = argmax_{\alpha,\beta}\big[-\frac{\sum_{i=1}{n}e_i^2}{2\sigma^2}\big] - \frac{n}{2}(log(2\pi) + 2log(\sigma))$$
+$$\hat\alpha, \hat\beta = argmax_{\alpha,\beta} l(\vec{e}|\alpha,\beta) = argmax_{\alpha,\beta}\bigg[-\frac{\sum_{i=1}{n}e_i^2}{2\sigma^2}\bigg] - \frac{n}{2}(log(2\pi) + 2log(\sigma))$$
 
 Removing the constant terms:
 
