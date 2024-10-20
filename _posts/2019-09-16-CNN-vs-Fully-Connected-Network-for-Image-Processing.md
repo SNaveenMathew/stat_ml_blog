@@ -61,7 +61,7 @@ Let us assume that the filter is square with $k_x = 1$ and $K(a, b) = 1$. Theref
   <figcaption>Sigmoid activation as a function of input. Courtesy: ResearchGate article [1]</figcaption>
 </figure>
 
-We observe that the function is linear for input is small in magnitude. Since the input image was normalized or scaled, all values x will lie in a small region around 0 such that $|x| < \epsilon$ for some non-zero $\epsilon$. Therefore, for some constant $k$ and for any point $X(a, b)$ on the image:
+We observe that the function is linear for input is small in magnitude. Since the input image was normalized or scaled, all values x will lie in a small region around 0 such that $\|x\| < \epsilon$ for some non-zero $\epsilon$. Therefore, for some constant $k$ and for any point $X(a, b)$ on the image:
 
 $$\sigma^{(sigmoid)}(X_1(a,b))_{[n\times 1]} \approx k*X_1(a,b)_{[n\times 1]}=k*x(a,b)_{[n\times 1]}$$
 
@@ -72,7 +72,7 @@ Let us assumed that we learnt optimal weights $W_1, b_1$ for a fully-connected n
 Since tanh is a rescaled sigmoid function, it can be argued that the same property applies to tanh. This can also be observed in the plot below:
 
 <figure>
-  <img src="../../../data/Tanh.gif">
+  <img src="../../../data/tanh.gif">
   <figcaption>tanh activation as a function of input. Courtesy: Wolfram MathWorld [2]</figcaption>
 </figure>
 
@@ -104,7 +104,7 @@ $$(2,1): x_{2,1}+x_{2,2}+...+x_{2,n_x-1} + x_{3,1}+x_{3,2}+...+x_{3,n_x-1} + ...
 
 $$(2,2): x_{2,2}+x_{2,3}+...+x_{2,n_x} + x_{3,2}+x_{3,3}+...+x_{3,n_x} + ... + x_{n_x,2}+x_{n_x,3}+...+x_{n_x,n_x}$$
 
-Notice that the filtered image summations contain elements in the first row, first column, last row and last column only once. All other elements appear twice. *Assuming* the values in the filtered image are small because the original image was normalized or scaled, the activated filtered image can be approximated as $k$ times the filtered image for a small value $k$. Under linear operations such as matrix multiplication (with weight matrix), the amount of information in $k*x_1$ is same as the amount of information in $x_1$ when $k$ is non-zero (true here since the slope of sigmoid/tanh is non-zero near the origin). Therefore, the filtered-activated image contains (*approximately*) the same amount of *information* as the filtered image (very loosely written for ease of understanding, because [Fisher] 'information' is the variance of the score function, which is related to the variance of the RV. A better version of this statement is: "the scaled/normalized input image and scaled/normalized filtered will have approximately the same amount of information").
+Notice that the filtered image summations contain elements in the first row, first column, last row and last column only once. All other elements appear twice. *Assuming* the values in the filtered image are small because the original image was normalized or scaled, the activated filtered image can be approximated as $k$ times the filtered image for a small value $k$. Under linear operations such as matrix multiplication (with weight matrix), the amount of information in $k \times x_1$ is same as the amount of information in $x_1$ when $k$ is non-zero (true here since the slope of sigmoid/tanh is non-zero near the origin). Therefore, the filtered-activated image contains (*approximately*) the same amount of *information* as the filtered image (very loosely written for ease of understanding, because [Fisher] 'information' is the variance of the score function, which is related to the variance of the RV. A better version of this statement is: "the scaled/normalized input image and scaled/normalized filtered will have approximately the same amount of information").
 
 Assuming the original image has non-redundant pixels and non-redundant arrangement of pixels, the column space of the image reduced from $(n_x, n_x)$ to $(2, 2)$ on application of $(n_x-1, n_x-1)$ filter. This causes loss of information, but it is guaranteed to retain more information than $(n_x, n_x)$ filter for $K(a, b) = 1$. As the filter width decreases, the amount of information retained in the filtered (and therefore, filtered-activated) image increases. It reaches the maximum value for $k_x = 1$.
 
@@ -112,7 +112,7 @@ In a practical case such as MNIST, most of the pixels near the edges are redunda
 
 #### Putting things together
 
-A peculiar property of CNN is that the same filter is applied at all regions of the image. This is called weight-sharing. The total number of parameters in the model is $(k_x * k_y) + (n_x-k_y+1)*(n_y-k_y+1)*C$.
+A peculiar property of CNN is that the same filter is applied at all regions of the image. This is called weight-sharing. The total number of parameters in the model is $(k_x \times k_y) + (n_x-k_y+1)\times (n_y-k_y+1)\times C$.
 
 1. Larger filter leads to smaller filtered-activated image, which leads to smaller amount of information passed through the fully-connected layer to the output layer. This leads to low signal-to-noise ratio, higher bias, but reduces the overfitting because the number of parameters in the fully-connected layer is reduced. This is a case of high bias, low variance.
 2. Smaller filter leads to larger filtered-activated image, which leads to larger amount of information passed through the fully-connected layer to the output layer. This leads to high signal-to-noise ratio, lower bias, but may cause overfitting because the number of parameters in the fully-connected layer is increased. This is a case of low bias, high variance.
@@ -130,5 +130,6 @@ MNIST data set in practice: a logistic regression model learns templates for eac
 
 ### References
 
-[1]: https://www.researchgate.net/figure/Logistic-curve-From-formula-2-and-figure-1-we-can-see-that-regardless-of-regression_fig1_301570543
-[2]: https://mathworld.wolfram.com/HyperbolicTangent.html
+1: https://www.researchgate.net/figure/Logistic-curve-From-formula-2-and-figure-1-we-can-see-that-regardless-of-regression_fig1_301570543
+
+2: https://mathworld.wolfram.com/HyperbolicTangent.html
