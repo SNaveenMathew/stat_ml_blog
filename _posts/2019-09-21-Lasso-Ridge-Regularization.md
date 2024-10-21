@@ -106,7 +106,7 @@ Dropout is often seen as a practical way of regularizing neural networks. It is 
 
 The model can be viewed as:
 
-$$M=X\odot R; R_{1\times h}\~ Bernoulli(p) \tag{Masking variables in X at random; excluding intercept/bias}$$
+$$M=X\odot R; R_{1\times h}~ Bernoulli(p) \tag{Masking variables in X at random; excluding intercept/bias}$$
 
 $$\hat{y}=f(x;\beta)=F_{sigmoid}(M\beta)\approx M\beta \tag{Linear regression on M vs y}$$
 
