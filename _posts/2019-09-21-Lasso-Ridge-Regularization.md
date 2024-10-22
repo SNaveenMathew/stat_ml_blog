@@ -27,7 +27,7 @@ $$Y=X\beta + \epsilon \tag{True model, unknown}$$
 
 #### Estimated Model
 
-$$\hat{y}^{(MLE)}=x\hat\beta^{(MLE)}+\hat{e}^{(MLE)} \tag{Estimated}$$
+$$y=x\hat\beta^{(MLE)}+\hat{e}^{(MLE)} \tag{Estimated}$$
 
 #### Loss Function
 
@@ -51,7 +51,7 @@ $$Y=X\beta + \epsilon \tag{True model, unknown}$$
 
 #### Estimated Model
 
-$$\hat{y}^{(Ridge)}=x\hat\beta^{(Ridge)}+\hat{e}^{(Ridge)} \tag{Estimated}$$
+$$y=x\hat\beta^{(Ridge)}+\hat{e}^{(Ridge)} \tag{Estimated}$$
 
 #### Loss Function
 
@@ -81,7 +81,7 @@ $$Y=X\beta + \epsilon \tag{True model, unknown}$$
 
 #### Estimated Model
 
-$$\hat{y}^{(Lasso)}=x\hat\beta^{(Lasso)}+\hat{e}^{(Lasso)} \tag{Estimated}$$
+$$y=x\hat\beta^{(Lasso)}+\hat{e}^{(Lasso)} \tag{Estimated}$$
 
 #### Loss Function
 
