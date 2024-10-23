@@ -61,3 +61,8 @@ $$\hat\beta_i^{(Lasso)}
     \hat\beta_i^{(OLS)}+\frac{\lambda}{2}& \text{if } \hat\beta_i^{(OLS)}<-\frac{\lambda}{2}
 \end{cases}
 \tag{Soft thresholding}$$
+
+Soft thresholding can be performed on each dimension individually. This update will converge to the optimal $\beta$ since they are independent. This idea is similar to [profile likelihood](https://en.wikipedia.org/wiki/Likelihood_function#Profile_likelihood) — estimation of a critical parameter is done by profiling out (fixing) noisy parameters and maximizing the likelihood (assumed convex), then the noisy parameters are estimated by fixing the critical parameter at its computed optimum value: this works when the parameters are independent.
+
+This method of updating one parameter at a time is called coordinate descent.
+
