@@ -52,4 +52,4 @@ $$\hat\beta^{(Lasso)}=argmin_\beta (\hat\beta^{(OLS)}-\beta)^T(\hat\beta^{(OLS)}
 
 $$\implies \hat\beta^{(Lasso)}=argmin_\beta (\hat\beta^{(OLS)}_i-\beta_i)^2 + \lambda |\beta_i|_1 + \sum_{j=1;j\neq i}^{p}\big[(\hat\beta^{(OLS)}_j-\beta_j)^2 +\lambda |\beta_j|_1\big]$$
 
-$$\implies \hat\beta_i^{(Lasso)} = argmin_\beta_i \big[(\hat\beta^{(OLS)}_i-\beta_i)^2 +\lambda |\beta_i|_1\big] \tag{Separating out the dimensions}$$
+$$\implies \hat\beta_i^{(Lasso)} = argmin_{\beta_i} \big[(\hat\beta^{(OLS)}_i-\beta_i)^2 +\lambda |\beta_i|_1\big] \tag{Separating out the dimensions}$$
