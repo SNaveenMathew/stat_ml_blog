@@ -10,8 +10,6 @@ Linear regression is a commonly used technique. It was first used by Sir Francis
 
 In this article, I will attempt to look at linear regression through a different lens — physics. For simplicity, we will assume that all the assumptions of linear regression are satisfied.
 
----
-
 ### The Mathematics
 
 Linear regression has the form
@@ -37,8 +35,6 @@ $$\sum_{\forall i} \hat{y}[i]-y[i] = 0$$
 In addition we have the following property:
 
 $$\sum_{\forall i} \bar{y}-y[i] = 0 \tag{Equation 2}$$
-
----
 
 ### Intuition
 
