@@ -1,6 +1,7 @@
 ---
 layout: post
 date: 2018-06-05 12:00:00 -0500
+image: /data/regressionfit.gif
 ---
 
 ## OLS Linear Regression: Hyperplane of Zero Net Force and Torque
