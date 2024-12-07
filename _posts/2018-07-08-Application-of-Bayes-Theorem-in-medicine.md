@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-07-08 12:00:00 -0500
-image: /data/regressionfit.gif
+image: ../../../data/regressionfit.gif
 ---
 
 ## Applications of Bayes Theorem in Medicine
