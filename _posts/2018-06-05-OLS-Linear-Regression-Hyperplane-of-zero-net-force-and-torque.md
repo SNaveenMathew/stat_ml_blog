@@ -2,7 +2,7 @@
 layout: post
 title: OLS Linear Regression: Hyperplane of Zero Net Force and Torque
 date: 2018-06-05 12:00:00 -0500
-tags: linear_regression, physics
+tags: linear_regression
 image: /img/postbanners/2022-02-24-cover-why-jhipster.jpeg
 ---
 
@@ -44,7 +44,7 @@ $$\sum_{\forall i} \bar{y}-y[i] = 0 \tag{Equation 2}$$
 
 ### Intuition
 
-<img src="../../../data/regressionfit.gif">
+<img src="data/regressionfit.gif">
 
 Image source: [This post](https://eli.thegreenplace.net/2016/linear-regression/) on [Eli Bendersky's website](https://eli.thegreenplace.net/)
 
