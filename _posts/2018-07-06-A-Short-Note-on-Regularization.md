@@ -1,5 +1,6 @@
 ---
 layout: post
+title: A Short Note on Regularization
 date: 2018-07-06 12:00:00 -0500
 image: /data/regressionfit.gif
 ---
