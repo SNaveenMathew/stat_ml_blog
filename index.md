@@ -1,3 +1,5 @@
 I'm moving my blog out of [Medium.com](https://snaveenmathew.medium.com/). My priorities have not changed - the goal of my blog posts will be to explain why/how things work from first principles. Majority of the articles will be based on machine learning and deep learning. The posts are meant to intrigue and challenge theoretically sound individuals - therefore, unlike the posts that discuss 'industry solutions' without sharing why/how things work, the (series of) posts will dive head-first into the details and not hide behind keywords or discuss results/empirical performance as the "end justifies the means". Relevant basics and research papers will be mentioned/referenced where required.
 
 Most posts on machine/deep learning are mathematical. Some posts go into practical experimentation using artificial/toy data sets.
+
+The blog structure was forked from [Renan Franca's website](https://renanfranca.github.io/). Some references to Renan Franca's pages were intentionally left - I plan to replace some of those with links to another blog where I wish to write about "industry solutions".
