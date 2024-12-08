@@ -1,7 +1,3 @@
-As a software engineer and member of the [JHipster Core Team](https://www.jhipster.tech/team/), I'm excited to share my experiences with [JHipster](https://www.jhipster.tech/) and [JHipster-Lite](https://www.jhipster.tech/jhipster-lite/).
+I'm moving my blog out of [Medium.com](https://snaveenmathew.medium.com/). My priorities have not changed - the goal of my blog posts will be to explain why/how things work from first principles. Majority of the articles will be based on machine learning and deep learning. The posts are meant to intrigue and challenge theoretically sound individuals - therefore, unlike the posts that discuss 'industry solutions' without sharing why/how things work, the (series of) posts will dive head-first into the details and not hide behind keywords or discuss results/empirical performance as the "end justifies the means". Relevant basics and research papers will be mentioned/referenced where required.
 
-Additionally, I'll offer some helpful tips and tricks related to various other technologies and tools.
-
-[Expert JHipster Lite Advice: Ask Me Anything!](https://www.fiverr.com/renan_franca/answer-any-questions-about-jhipster-lite)
-
-Enjoy ✌!
+Most posts on machine/deep learning are mathematical. Some posts go into practical experimentation using artificial/toy data sets.
