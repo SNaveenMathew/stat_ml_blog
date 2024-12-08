@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-08-20 12:00:00 -0500
-image: ../../../data/2_knot_ReLU.jpg
+image: /data/2_knot_ReLU.jpg
 ---
 
 ## Bayes Theorem - The Basic Math
