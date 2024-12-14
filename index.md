@@ -4,7 +4,7 @@ Most posts on machine/deep learning are mathematical. Some posts go into practic
 
 The blog structure was forked from [Renan Franca's website](https://renanfranca.github.io/). Some references to Renan Franca's pages were intentionally left - I plan to replace some of those with links to another blog where I wish to write about "industry solutions".
 
-
+<html lang="en" class="scroll-smooth">
 <div
   id="menu"
   role="dialog"
@@ -1014,3 +1014,4 @@ The blog structure was forked from [Renan Franca's website](https://renanfranca.
     }, 2000);
   }
 </script>
+</html>
