@@ -52,5 +52,6 @@ defaults:
       type: post
     values:
       tags: Other
+      math: true
 
 future: false

@@ -26,9 +26,9 @@
   <link rel="preload" href="{{ '/assets/fonts/literata-var.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
-  {%- comment -%} Opt-in: add `math: true` to a post's front matter to load MathJax. {%- endcomment %}
+  {%- comment -%} Posts enable MathJax by default; other pages can opt in with `math: true`. {%- endcomment %}
   {%- if page.math %}
-  <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], processEscapes: true } };</script>
+  <script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']], processEscapes: true } };</script>
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
   {%- endif %}
 </head>
