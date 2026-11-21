@@ -153,7 +153,7 @@ Let:
 
 - $N$ be the number of documents,
 - $V$ be the vocabulary size,
-- $T = \sum_{i=1}^{N} |\text{document}_i|$ be the total number of tokens across all documents, and
+- $T = \sum_{i=1}^{N} t_i$ be the total number of tokens across all documents, where $t_i$ is the number of tokens in document $i$, and
 - $N_0$ be the number of nonzero entries in the DTM.
 
 - Building the vocabulary: $O(T)$ on average
