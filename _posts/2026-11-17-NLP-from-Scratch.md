@@ -149,7 +149,12 @@ The pseudocode assumes average constant-time hash-map operations. This is the us
 
 ##### Time complexity
 
-Let $N = |documents|$, $V = |vocab|$, $T = \sum_{i=1}^N |document_i|$ and $N_0 = COUNT(non\_zero(DTM))$
+Let:
+
+- $N$ be the number of documents,
+- $V$ be the vocabulary size,
+- $T = \sum_{i=1}^{N} |\text{document}_i|$ be the total number of tokens across all documents, and
+- $N_0$ be the number of nonzero entries in the DTM.
 
 - Building the vocabulary: $O(T)$ on average
 - Building sparse document rows: $O(T)$ on average
