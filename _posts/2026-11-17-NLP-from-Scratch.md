@@ -34,12 +34,24 @@ A string can be used to represent each document in almost every programming lang
 A 'token' typically refers to a word. Typical 'word tokenization' is performed using simple rules, such as splitting on spaces and punctuation. Language processing models then 'represent' words as vectors of numbers (see the next section) to perform their tasks.
 
 ```text
+lowercase(char):
+  int_char = int(char)
+  if int_char >= 65 and int_char <= 90:
+    return chr(int_char + 32)
+  return char
+
+lower_document(document):
+  lower_result = ''
+  for i, char in enumerate(document):
+    lower_result += lowercase(char)
+  return char
+
 tokenize(document):
-  delimiters = set(' ', '.', '?', '!')
+  delimiters = set(' ', '.', '?', '!', ',', '\t', '\n', '\r', '(', ')', '[', ']', '{', '}', '"', '\'', '\\')
   tokenized = empty list
   current_token = empty string
 
-  for char in lower(document):
+  for char in lower_document(document):
     if char in delimiters:
       if current_token != '':
         tokenized.append(current_token)
@@ -100,17 +112,11 @@ For this example the matrices happen to have the same values because no term rep
 
 $$vocab = set(distinct\_words) = \{w_1, w_2, ..., w_n\}$$
 
-$$X_{\mathrm{DTM},(i,j)} = \sum_{k=1}^{|\mathrm{document}_{i}|} (\mathrm{document}_{i}[k] = \mathrm{vocab}_{j})$$
+$$X_{\mathrm{DTM},(i,j)} = \sum_{k=1}^{|\mathrm{document}_{i}|} 1(\mathrm{document}_{i}[k] = \mathrm{vocab}_{j})$$
 
 #### Implementation
 
 ```text
-lowercase(char):
-  int_char = int(char)
-  if int_char >= 65 and int_char <= 90:
-    return chr(int_char + 32)
-  return char
-
 fit_vocabulary(documents):
   term_column_map = empty hash map
 
@@ -161,7 +167,7 @@ Let:
 - Initializing a dense DTM: $O(NV)$
 - Filling a dense DTM from sparse rows: $O(N_0)$
 
-The sparse implementation has a total expected time of $O(T)$, assuming average constant-time hash-map operations. A dense matrix additionally requires $O(NV)$ initialization, and filling it from the sparse rows takes $O(N_0)$. Therefore, count-based dense construction takes $O(T + NV)$.
+The sparse implementation has a total expected time of $O(T)$, assuming average constant-time hash-map operations. If a dense DTM is also needed, its construction additionally requires $O(NV)$ initialization and $O(N_0)$ filling from the sparse rows. Its total construction time is $O(T + NV)$ because $N_0 \leq T$.
 
 Since each document has at most $T$ term occurrences, $N_0 \leq \min(NV,T)$.
 
@@ -179,11 +185,11 @@ Let's assume we have a corpus of documents for a specific task such as sentiment
 
 Interpretation varies with the model architecture. For a simple linear 'classifier', $\hat{y} = \hat{f}(X_{DTM}) = \hat{w}^T X_{DTM}$, and $w_i$ describes the learned association of term $i$ with the output. A positive or negative coefficient can be treated as a positive or negative association between the word and sentiment.
 
-Assumptions and caveats: For simplicity, we assume simple linear model with a fixed + convex loss function (eg: cross-entropy) without regularization. Similar terms (VIF), document length and class balance can all affect the stability of learned coefficients. For a valid evaluation, split the documents into training and test sets before fitting - fit preprocessing statistics and the vocabulary on the training set only. Transform the test documents with that fixed vocabulary and exclude words in the test set that were not observed in the train set.
+Assumptions and caveats: For simplicity, we assume simple linear model with a fixed + convex loss function (eg: cross-entropy) without regularization. Similar terms (VIF), document length and class balance can all affect the stability of learned coefficients. For a valid evaluation, split the documents into training and test sets before fitting - fit preprocessing statistics and the vocabulary on the training set only. Transform the test documents with that fixed vocabulary and exclude words in the test set that were not observed in the train set (more recent methods use 'UNK' tokens).
 
 ### This is too old. Why bother?
 
-The answer is simple: computation is not free. Even with the modern models, whether people realize it or not, preprocessing (eg: tokenization) is still required! Representation models perform computations on preproceesed documents! The fact that these are almost instantaneous today does not change the fact that computation and energy consumption are still required.
+The answer is simple: computation is not free. Many modern models still use tokenization and other preprocessing, so the input representation can add both memory and energy costs. The fact that these steps are almost instantaneous today does not remove their computational requirements. Tokenizer-free approaches also exist, but they convert or process raw text at another stage of the model rather than eliminating computation.
 
 **Note:** In a [previous LinkedIn post](https://www.linkedin.com/posts/snaveenmathew_the-first-two-lines-of-the-paper-resonated-share-7464040800893648896-Zhm2/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAQW-0oB2j2VSm47oqBjlGu8flMcnAIJhDw) I speculated tokenization may not be required in the future. Recently Aleksa Gordic shared [H-Nets](https://www.cartesia.ai/blog/from-tokens-to-bytes-part-1) - a class of tokenizer-free models. **Opinion:** This is not just a step towards reducing computation and energy usage; it is a tangible step towards improving the quality of language models.
 
