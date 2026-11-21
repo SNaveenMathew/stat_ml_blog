@@ -43,8 +43,8 @@ lowercase(char):
 lower_document(document):
   lower_result = ''
   for i, char in enumerate(document):
-    lower_result += lowercase(char)
-  return char
+    lower_result = concat(lower_result, lowercase(char))
+  return lower_result
 
 tokenize(document):
   delimiters = set(' ', '.', '?', '!', ',', '\t', '\n', '\r', '(', ')', '[', ']', '{', '}', '"', '\'', '\\')
