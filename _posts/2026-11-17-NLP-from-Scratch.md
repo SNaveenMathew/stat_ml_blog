@@ -100,7 +100,7 @@ For this example the matrices happen to have the same values because no term rep
 
 $$vocab = set(distinct\_words) = \{w_1, w_2, ..., w_n\}$$
 
-$$X_{DTM}_{(i, j)} = \sum_{k=1}^{|document_i|} (document_i[k] == vocab[j])$$
+$$X_{DTM}_{(i, j)} = \sum_{k=1}^{|document_{i}|} (document_i[k] == vocab[j])$$
 
 #### Implementation
 
