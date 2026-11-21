@@ -203,4 +203,4 @@ The answer is simple: computation is not free. Many modern models still use toke
 - [Introductory Natural Language Processing on Kaggle](https://www.kaggle.com/learn-guide/intro-nlp)
 - [Intermediate Natural Language Processing on Kaggle](https://www.kaggle.com/learn-guide/intermediate-nlp)
 
-Content is likely to lag behind the courses I completed. I plan to keep the implementation and explanations aligned as the series develops.
+Content is likely to lag behind the courses I completed. Code will be shared in [this repo](https://github.com/SNaveenMathew/zero_to_karpathy) moving forward - it's currently empty and will be populated soon.
