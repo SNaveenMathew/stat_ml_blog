@@ -2,7 +2,7 @@
 layout: post
 title: Basics of Natural Language Processing
 date: 2026-11-17 12:00:00 -0000
-image: /data/NN_design1.jpg
+image: /data/byte-pair-encoding-cover-image.webp
 ---
 
 ## Basics of Natural Language Processing
@@ -59,6 +59,8 @@ Tokens aren't always words. A token might be a single character (applicable to o
 
 Apart from BPE tokenization, there were a few rule / model based standardization / normalization steps: spell checking, stemming, lemmatization, etc. These are not covered here.
 
+![Byte pair encoding example; reference: https://www.cio.com/article/4156783/understanding-tokenization-and-consumption-in-llms.html](/data/byte-pair-encoding-cover-image.webp)
+
 ### The representation problem and Bag of Words (BoW)
 
 Computers do not inherently represent or process language as people do. They operate on numbers, so natural language must first be converted into a representation that can be used for computation/calculation. This 'representation'/translation/conversion does not by itself give a computer the human meaning of a sentence. Models are trained to map representations to outputs; "understanding" is therefore context-dependent and may mean something very different from human comprehension.
@@ -103,6 +105,12 @@ $$X_{DTM}_{(i, j)} = \sum_{k=1}^{|document_i|} (document_i[k] == vocab[j])$$
 #### Implementation
 
 ```text
+lowercase(char):
+  int_char = int(char)
+  if int_char >= 65 and int_char <= 90:
+    return chr(int_char + 32)
+  return char
+
 fit_vocabulary(documents):
   term_column_map = empty hash map
 
